@@ -3,6 +3,6 @@
 @tailwind utilities;
 @layer base {
   body {
-    @apply font-normal font-lato overflow-x-hidden bg-gray-200
+    @apply font-normal font-lato overflow-x-hidden 
   }
 }

@@ -1,12 +1,10 @@
+import { FC } from "react"
+import Header from "./components/Header/Header"
 
-
-function App() {
-
+const App: FC = () => {
   return (
     <>
-      <h1 className="text-3xl underline">
-        Hello world!
-      </h1>
+      <Header />
     </>
   )
 }

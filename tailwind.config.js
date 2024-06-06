@@ -19,7 +19,9 @@ export default {
     },
     extend: {
       colors: {
-        'moderateCyan': '#3cb4ac',
+        'orange': '#f48c06',
+        'red': '#f94144',
+        'green': '#1ef600',
       },
       fontFamily: {
         'lato': ['Lato', 'sans-serif'],
