@@ -1,12 +1,17 @@
 import { FC } from "react";
-import Button from "./Button/Button";
+import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
+import { open, close } from "../../Redux/modalSlice";
+import Button from "../Button/Button";
+import Modal from "../Modal/Modal";
 
 const Header: FC = () => {
+  const isModalOpen = useAppSelector(state => state.modal.value)
+  const dispatch = useAppDispatch()
   interface modalProp {
     onClick: () => void
   }
   function modalOpen() {
-    console.log(12123)
+    dispatch(open())
   }
   return (
     <>
@@ -18,8 +23,9 @@ const Header: FC = () => {
             </h1>
             <Button onClick={modalOpen} />
           </div>
-          <hr className="bg-gray-400 h-[3px] rounded-full" />
+          <hr className="bg-gray-400 h-[2px] rounded-full" />
         </div>
+        {isModalOpen && <Modal />}
       </header>
     </>
   )
