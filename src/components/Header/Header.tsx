@@ -1,15 +1,13 @@
 import { FC } from "react";
-import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
-import { open, close } from "../../Redux/modalSlice";
+import { useAppDispatch } from "../../Redux/hooks/useAppDispatch";
+import { useAppSelector } from "../../Redux/hooks/useAppSelector";
+import { open } from "../../Redux/modalSlice";
 import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
 
 const Header: FC = () => {
   const isModalOpen = useAppSelector(state => state.modal.value)
   const dispatch = useAppDispatch()
-  interface modalProp {
-    onClick: () => void
-  }
   function modalOpen() {
     dispatch(open())
   }
