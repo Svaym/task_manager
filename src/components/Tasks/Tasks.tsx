@@ -3,7 +3,6 @@ import { useAppSelector } from "../../Redux/hooks/useAppSelector";
 
 const Tasks: FC = () => {
   const arrayOfTasks = useAppSelector(state => state.tasks.taskArray)
-  console.log(arrayOfTasks)
   return (
     <section className="">
       <div className="max-w-7xl w-full mx-auto px-6">
@@ -20,3 +19,4 @@ const Tasks: FC = () => {
   )
 }
 export default Tasks
+

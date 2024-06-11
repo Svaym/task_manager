@@ -12,7 +12,8 @@ const Form: FC = () => {
   //  Выбор цвета
   const [colour, setColour] = useState('green')
   const dispatch = useAppDispatch()
-  function addNewTask(title: string, desc?: string, colour: string): void {
+  // title: string, desc?: string, colour: string
+  function addNewTask(): void {
     dispatch(addTask({title: title,
                       desc: desc,
                       colour: colour}))
@@ -43,7 +44,8 @@ const Form: FC = () => {
                 <option onClick={() => setColour('orange')} className="bg-orange" value="orange">Оранжевый</option>
                 <option onClick={() => setColour('red')} className="bg-red" value="red">Красный</option>
               </select>
-            <button type="submit" onClick={() => addNewTask(title, desc, colour)} disabled={title.trim()=== ''} className="absolute bottom-5 left-1/2 -translate-x-1/2 px-4 pt-1 font-bold pb-2 bg-blue-700 text-white rounded-full transition-colors duration-300 ease-linear hover:bg-blue-900">
+              {/* title, desc, colour */}
+            <button type="submit" onClick={() => addNewTask()} disabled={title.trim()=== ''} className="absolute bottom-5 left-1/2 -translate-x-1/2 px-4 pt-1 font-bold pb-2 bg-blue-700 text-white rounded-full transition-colors duration-300 ease-linear hover:bg-blue-900">
               Добавить
             </button>
           </form>
@@ -53,4 +55,3 @@ const Form: FC = () => {
   )
 }
 export default Form
-
