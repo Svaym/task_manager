@@ -1,8 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
+
+interface Task{
+  title: string;
+  desc: string;
+  colour: string;
+}
 export interface TaskState {
-  taskArray: string[]
+  taskArray: Task[]
 }
 const initialState: TaskState = {
   taskArray: []

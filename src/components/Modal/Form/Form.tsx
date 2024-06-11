@@ -14,9 +14,7 @@ const Form: FC = () => {
   const dispatch = useAppDispatch()
   // title: string, desc?: string, colour: string
   function addNewTask(): void {
-    dispatch(addTask({title: title,
-                      desc: desc,
-                      colour: colour}))
+    dispatch(addTask({title: title, desc: desc, colour: colour}))
     setTitle('')
     setDesc('')
   }
