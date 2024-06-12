@@ -16,7 +16,7 @@ const Header: FC = () => {
       <header>
         <div className="max-w-7xl w-full mx-auto px-6">
           <div className="flex items-center justify-between py-5">
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-3xl font-bold sm:text-xl xs:text-lg">
               Менеджер задач
             </h1>
             <Button onClick={modalOpen} />

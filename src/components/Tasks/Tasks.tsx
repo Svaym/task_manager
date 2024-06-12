@@ -16,7 +16,6 @@ const Tasks: FC = () => {
     title: string;
     desc: string;
     colour: string;
-    // isClicked: boolean
   }
   //  Удаление задачи
   function deleteTask(task: Task): void {
@@ -25,13 +24,13 @@ const Tasks: FC = () => {
   return (
     <section className="">
       <div className="max-w-7xl w-full mx-auto px-6">
-        <div className="flex items-center gap-x-12 justify-center mt-6">
-          <button onClick={() => colorChoice('')} className="py-6 px-20 bg-gray-400 rounded-xl transition-colors duration-300 ease-linear hover:bg-gray-700"></button>
-          <button onClick={() => colorChoice('red')} className="py-6 px-20 bg-red rounded-xl transition-colors duration-300 ease-linear hover:bg-rose-700"></button>
-          <button onClick={() => colorChoice('orange')} className="py-6 px-20 bg-orange rounded-xl transition-colors duration-300 ease-linear hover:bg-yellow-700"></button>
-          <button onClick={() => colorChoice('green')} className="py-6 px-20 bg-green rounded-xl transition-colors duration-300 ease-linear hover:bg-lime-700"></button>
+        <div className="flex items-center gap-x-12 justify-center mt-6 lg:gap-x-6 xs:grid xs:grid-cols-2 xs:grid-rows-2 xs:gap-3">
+          <button onClick={() => colorChoice('')} className="py-6 px-20 bg-gray-400 rounded-xl transition-colors duration-300 ease-linear hover:bg-gray-700 lg:py-5 lg:px-14 sm:py-4 sm:px-10"></button>
+          <button onClick={() => colorChoice('red')} className="py-6 px-20 bg-red rounded-xl transition-colors duration-300 ease-linear hover:bg-rose-700 lg:py-5 lg:px-14 sm:py-4 sm:px-10"></button>
+          <button onClick={() => colorChoice('orange')} className="py-6 px-20 bg-orange rounded-xl transition-colors duration-300 ease-linear hover:bg-yellow-700 lg:py-5 lg:px-14 sm:py-4 sm:px-10"></button>
+          <button onClick={() => colorChoice('green')} className="py-6 px-20 bg-green rounded-xl transition-colors duration-300 ease-linear hover:bg-lime-700 lg:py-5 lg:px-14 sm:py-4 sm:px-10"></button>
         </div>
-        <div className="grid grid-cols-3 gap-5 mt-4">
+        <div className="grid grid-cols-3 gap-5 mt-7 md:grid-cols-2 xs:grid-cols-1">
           {arrayOfTasks.filter(task => task.colour === choice || choice === '').map((task, index) => (
             <div key={index} className={task.colour === 'green' ? "border-2 border-green rounded-3xl p-3 h-40 animate-fade" : task.colour === 'red' ? ' border-2 border-red rounded-3xl p-3 h-40 animate-fade' : ' border-2 border-orange rounded-3xl p-3 h-40 animate-fade'}>
                 <button className="ml-auto block" onClick={() => deleteTask(task)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-red transition-colors duration-300 ease-linear hover:stroke-rose-200">
