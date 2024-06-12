@@ -23,9 +23,9 @@ const Form: FC = () => {
   }
   return (
     <>
-      <section className="relative">
-        <div onClick={modalClose} className="fixed inset-0 bg-gray-800 bg-opacity-75 z-10"></div>
-        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-white p-5 h-[30rem] rounded-md w-1/2 md:w-4/5 xs:w-[90%] xxs:w-[95%]">
+      <section className="relative animate-fade-in">
+        <div onClick={modalClose} className="fixed inset-0 bg-gray-800 bg-opacity-75 z-50"></div>
+        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-white p-5 h-[30rem] rounded-md w-1/2 md:w-4/5 xs:w-[90%] xxs:w-[95%]">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold">
               Добавить новую задачу

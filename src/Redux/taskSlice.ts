@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
-
 interface Task{
   title: string;
   desc: string;
@@ -19,9 +18,12 @@ export const taskSlice = createSlice({
   reducers: {
     addTask: (state, action) => {
       state.taskArray.push(action.payload)
+    },
+    removeTask: (state, action) => {
+      state.taskArray = state.taskArray.filter(task => task.title !== action.payload.title);
     }
   }
 })
-export const { addTask } = taskSlice.actions
+export const { addTask, removeTask } = taskSlice.actions
 export const selectTask = (state: RootState) => state.tasks.taskArray
 export default taskSlice.reducer

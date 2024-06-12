@@ -29,18 +29,17 @@ export default {
         'lato': ['Lato', 'sans-serif'],
       },
       animation: {
-        'fade': 'fade .8s linear',
-        'fade-in': 'fade-in .6s ease-in',
+        'fade': 'fade 1s linear',
+        'fade-out': 'fade-out 1s linear',
       },
       keyframes: {
         'fade': {
-          from: { top: '-100%' },
-          to: { top: '0%' },
+          from: { width: '0%' },
+          to: { width: '100%' },
         },
-        'fade-in': {
-          '0%': { opacity: 0 },
-          '50%': { opacity: 0.5 },
-          '100%': { opacity: 1 },
+        'fade-out': {
+          from: { width: '100%' },
+          to: { width: '0%' },
         },
       }
     },
